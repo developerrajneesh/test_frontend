@@ -1,0 +1,33 @@
+.users-controls {
+  margin-bottom: 12px;
+}
+
+.users-search {
+  flex: 1 1 280px;
+}
+
+.users-error {
+  margin-bottom: 12px;
+}
+
+.users-form-col {
+  flex: 1 1 180px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.col-id {
+  width: 90px;
+}
+.col-role {
+  width: 120px;
+}
+.col-status {
+  width: 120px;
+}
+.col-actions {
+  width: 170px;
+}
+

@@ -1,0 +1,27 @@
+.conversations-controls {
+  margin-bottom: 12px;
+}
+
+.conversations-filter {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.conversations-error {
+  margin-bottom: 12px;
+}
+
+.col-conv-id {
+  width: 180px;
+}
+.col-conv-agent {
+  width: 160px;
+}
+.col-conv-started {
+  width: 220px;
+}
+.col-conv-status {
+  width: 120px;
+}
+

@@ -1,0 +1,13 @@
+.dashboard-grid {
+  align-items: stretch;
+}
+
+.dashboard-card {
+  flex: 1 1 280px;
+}
+
+.dashboard-card-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
