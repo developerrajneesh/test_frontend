@@ -1,16 +1,63 @@
-# React + Vite
+# Frontend (`test_frontend`)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for the assessment app.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project setup instructions
 
-## React Compiler
+### Option A: Run as a standalone repository
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+git clone https://github.com/developerrajneesh/test_frontend.git
+cd test_frontend
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+> Note: The `.env` file is already included in the `test_frontend` repository.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Option B: Run from the monorepo
+
+```bash
+cd test_frontend
+npm install
+npm run dev
+```
+
+---
+
+## Environment variable configuration
+
+The frontend reads environment variables via Vite.
+
+Required (for auth):
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+Required (to call backend APIs):
+
+- `VITE_API_URL` (example: `http://localhost:3001`)
+
+---
+
+## Supabase usage explanation (frontend)
+
+The frontend uses Supabase Auth (email/password):
+
+- Creates a Supabase client from `VITE_SUPABASE_URL` + `VITE_SUPABASE_ANON_KEY`
+- Manages session state in `AuthContext`
+- Adds `Authorization: Bearer <access_token>` to requests made via the shared axios instance
+
+---
+
+## Deployment (Vercel)
+
+The repo includes `vercel.json` and is deployable as a static Vite build.
+
+- **Project root**: `test_frontend`
+- **Env vars**:
+  - `VITE_API_URL` = deployed backend URL
+  - `VITE_SUPABASE_URL`
+  - `VITE_SUPABASE_ANON_KEY`
