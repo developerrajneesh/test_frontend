@@ -52,12 +52,3 @@ The frontend uses Supabase Auth (email/password):
 
 ---
 
-## Deployment (Vercel)
-
-The repo includes `vercel.json` and is deployable as a static Vite build.
-
-- **Project root**: `test_frontend`
-- **Env vars**:
-  - `VITE_API_URL` = deployed backend URL
-  - `VITE_SUPABASE_URL`
-  - `VITE_SUPABASE_ANON_KEY`
